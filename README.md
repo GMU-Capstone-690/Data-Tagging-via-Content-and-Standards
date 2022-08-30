@@ -7,5 +7,5 @@ Data tagging is used for classification, identification, arrangement and organiz
 
 # Credits
 George Mason Data Analytics Engineering Program: DAEN 690
-<br /> Fall 2022 Team Code-Bees: Madesh Chinnathevar Ramesh, Shugufta Hassan, Durafshan Jawad, Lama Alznaidi, Prajna Shetty
+<br /> Fall 2022 Team Code-Bees: Madesh Chinnathevar Ramesh, Shagufta Hassan, Durafshan Jawad, Lama Alznaidi, Prajna Shetty
 

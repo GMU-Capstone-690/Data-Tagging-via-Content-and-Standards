@@ -1,56 +1,36 @@
 # Datasets 
 
-The proposed datasets for the projects are:
+The owner of all datasets is 'Crawl Feeds'. The proposed datasets for the projects are:
 
-Dataset 1:
-
-Name: BBC UK news dataset 
-
-Owner: Crawl Feeds 
+Dataset 1: BBC UK news dataset 
 
 Size: 93.99 MB 
 
 Access: https://data.world/opensnippets/bbc-uk-news-dataset 
 
 
-Dataset 2:
-
-Name: Al Jazeera English News Dataset
-
-Owner: rawl Feeds
+Dataset 2: Al Jazeera English News Dataset
 
 Size: 25.99 MB 
 
 Access: https://data.world/opensnippets/al-jazeera-news-dataset 
 
 
-Dataset 3:
-
-Name: CNBC News Dataset 
-
-Owner: Crawl Feeds 
+Dataset 3: CNBC News Dataset 
 
 Size: 5.16 MB
 
 Access: https://data.world/crawlfeeds/cnbc-news-dataset 
 
 
-Dataset 4:
-
-Name: CNN news dataset
-
-Owner: Crawl Feeds
+Dataset 4: CNN news dataset
 
 Size: 19.04 MB
 
 Access: https://data.world/opensnippets/cnn-news-dataset 
 
 
-Dataset 5:
-
-Name: The Japan Times news dataset May 31, 2022
-
-Owner: Crawl Feeds
+Dataset 5: The Japan Times news dataset May 31, 2022
 
 Size: 1.43 MB
 

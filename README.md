@@ -6,7 +6,7 @@ Data tagging is used for classification, identification, arrangement and organiz
 ## Objectives
 
 ## Datasets
-[Datsets proposed for this project are mentioned here.](/Datasets)
+[Datsets proposed for this project are mentioned here.](/Datasets Overview)
 
 ## Installation
 

@@ -1,78 +1,29 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import pandas as pd
 
-
-# ## BBC News Dataset
-
-# In[3]:
-
+### BBC News Dataset
 
 bbc=pd.read_csv("C:/DEAN/Datasets/bbc.csv")
-
-
-# In[4]:
-
-
 bbc.head()
-
-
-# In[4]:
-
-
 bbc.describe()
-
-
-# In[13]:
-
-
 bbc.columns
-
-
-# In[14]:
-
 
 # checking null values for each column
 bbc.columns.isna().sum()
-
-
-# In[16]:
-
 
 # checking blank values for each column
 print('title = %d' % (bbc['title'].values == '').sum())
 print('url = %d' % (bbc['url'].values == '').sum())
 
-
-# In[17]:
-
-
 # checking tap values for each column
 print('title = %d' % (bbc['title'].values == ' ').sum())
 print('url = %d' % (bbc['url'].values == ' ').sum())
-
-
-# In[18]:
-
 
 # checking 'na' values for each column
 print('title = %d' % (bbc['title'].values == 'na').sum())
 print('url = %d' % (bbc['url'].values == 'na').sum())
 
-
-# In[19]:
-
-
 # checking duplicate values for url column
 print('url = %d' % (bbc['url'].duplicated()).sum())
-
-
-# In[ ]:
-
 
 #checking the invalidity of the URLs
 from urllib.request import urlopen, URLError, HTTPError
@@ -87,22 +38,15 @@ def validate_web_url(dataframe):
             url_status.append("invalid")
     return url_status
 
-
-# In[ ]:
-
-
 url_status = validate_web_url(bbc)
 bbc.insert(0,'url_status', url_status)
 bbc['url_status'].value_counts()
 
-
-# In[ ]:
-
-
+#droping rows that have invalid url
 bbc.drop(bbc.loc[bbc['url_status']=="invalid"].index, inplace=True)
 
 
-# ## ALJAZEERA NEWS DATASETS
+### ALJAZEERA NEWS DATASETS
 
 # In[ ]:
 

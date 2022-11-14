@@ -1,6 +1,6 @@
 ## Datasets 
 
-The owner of all datasets is 'Crawl Feeds'. The proposed datasets for the projects are:
+The owner of all datasets is 'Crawl Feeds'. The proposed datasets for the projects in raw format are:
 
 
 **Dataset 1:** BBC UK news dataset (Size: 93.99 MB), Access: https://data.world/opensnippets/bbc-uk-news-dataset 

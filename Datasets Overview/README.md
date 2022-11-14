@@ -3,9 +3,9 @@
 The proposed datasets for the projects are:
 
 Dataset 1: 
-Name: BBC UK news dataset
-Owner: Crawl Feeds
-Size: 93.99 MB
+Name: BBC UK news dataset 
+Owner: Crawl Feeds 
+Size: 93.99 MB 
 Access: https://data.world/opensnippets/bbc-uk-news-dataset 
 
 Dataset 2:

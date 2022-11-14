@@ -4,13 +4,11 @@ The owner of all datasets is 'Crawl Feeds'. The proposed datasets for the projec
 
 
 Dataset 1: BBC UK news dataset (Size: 93.99 MB)
-
 Access: https://data.world/opensnippets/bbc-uk-news-dataset 
 
 Dataset 2: Al Jazeera English News Dataset (Size: 25.99 MB)
 
 Access: https://data.world/opensnippets/al-jazeera-news-dataset 
-
 
 Dataset 3: CNBC News Dataset (Size: 5.16 MB)
 

@@ -232,3 +232,5 @@ japan_times['url_status'].value_counts()
 
 #dropping rows that have invalid url
 japan_times.drop(japan_times.loc[japan_times['url_status']=="invalid"].index, inplace=True)
+
+

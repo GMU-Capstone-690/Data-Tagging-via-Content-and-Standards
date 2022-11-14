@@ -30,7 +30,7 @@ Size: 19.04 MB
 Access: https://data.world/opensnippets/cnn-news-dataset 
 
 
-Dataset 5: The Japan Times news dataset May 31, 2022
+Dataset 5: The Japan Times news dataset
 
 Size: 1.43 MB
 

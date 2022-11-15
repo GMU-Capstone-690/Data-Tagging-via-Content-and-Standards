@@ -3,7 +3,6 @@
 
 # # Text and Keywords Extraction from HTML Pages
 
-# In[1]:
 
 
 # importing required libraries
@@ -21,7 +20,6 @@ os.getcwd()
 
 # ## Text Extracting Function
 
-# In[2]:
 
 
 # UDF to extract clean text, published date and title from HTML script using URLs
@@ -41,7 +39,6 @@ def text_extract(dataframe):
 
 # ## Tags Extracting Function
 
-# In[3]:
 
 
 # UDF to extract person names, organization names and places names from HTML script using URLs
@@ -64,7 +61,6 @@ def tags_extract(dataframe):
 
 # ## Tags Counter Function
 
-# In[4]:
 
 
 # UDF to count number of repeats for person names, organization names and places
@@ -83,10 +79,10 @@ def tags_count(dataframe):
     return dataframe.drop([i+'1'], axis=1, inplace=True)
       
 
-
+### Processing for datasets using cleaned data
 # ## Aljazeera News dataset
 
-# In[5]:
+
 
 
 # reading aljazeera news CSV file from a local location
@@ -94,7 +90,7 @@ aljazeera = pd.read_csv("aljazeera_cleaned.csv")
 aljazeera.head(3)
 
 
-# In[7]:
+
 
 
 # extracting  clean text, published date and title from HTML script using aljazeera articles URLs  
@@ -106,7 +102,7 @@ aljazeera.insert(2,'extracted_published_date', extracted_published_date)
 aljazeera.head(3)
 
 
-# In[8]:
+
 
 
 # extracting  person names, organization names and places names from HTML script using aljazeera articles URLs
@@ -118,7 +114,7 @@ aljazeera.insert(5,'extractedkeyw_pla', extractedkeyw_pla)
 aljazeera.head(3)
 
 
-# In[9]:
+
 
 
 # counting number of repeats for person names, organization names and places for aljazeera dataset
@@ -126,7 +122,7 @@ tags_count(aljazeera)
 aljazeera.head(3)
 
 
-# In[ ]:
+
 
 
 # saving the dataset to CSV file
@@ -135,7 +131,7 @@ aljazeera.to_csv('aljazeera_extracted.csv', index=False)
 
 # ## BBC News dataset  
 
-# In[10]:
+
 
 
 # reading BBC news CSV file from a local location
@@ -143,7 +139,7 @@ bbc = pd.read_csv("bbc_cleaned.csv")
 bbc.head(3)
 
 
-# In[12]:
+
 
 
 # extracting  clean text, published date and title from HTML script using BBC articles URLs
@@ -155,7 +151,7 @@ bbc.insert(2,'extracted_published_date', extracted_published_date)
 bbc.head(3)
 
 
-# In[13]:
+
 
 
 # extracting  person names, organization names and places names from HTML script using BBC articles URLs
@@ -167,7 +163,7 @@ bbc.insert(5,'extractedkeyw_pla', extractedkeyw_pla)
 bbc.head(3)
 
 
-# In[14]:
+
 
 
 # counting number of repeats for person names, organization names and places for BBC dataset
@@ -175,7 +171,7 @@ tags_count(bbc)
 bbc.head(3)
 
 
-# In[26]:
+
 
 
 # saving the dataset to CSV file
@@ -184,7 +180,7 @@ bbc.to_csv('bbc_extracted.csv', index=False)
 
 # ## CNBC News dataset
 
-# In[15]:
+
 
 
 # reading CNBC news CSV file from a local location
@@ -192,7 +188,7 @@ cnbc = pd.read_csv("cnbc_cleaned.csv")
 cnbc.head(3)
 
 
-# In[17]:
+
 
 
 # extracting  clean text, published date and title from HTML script using CNBC articles URLs  
@@ -204,7 +200,7 @@ cnbc.insert(2,'extracted_published_date', extracted_published_date)
 cnbc.head(3)
 
 
-# In[18]:
+
 
 
 # extracting  person names, organization names and places names from HTML script using CNBC articles URLs
@@ -216,7 +212,7 @@ cnbc.insert(5,'extractedkeyw_pla', extractedkeyw_pla)
 cnbc.head(3)
 
 
-# In[19]:
+
 
 
 # counting number of repeats for person names, organization names and places for CNBC dataset
@@ -224,7 +220,7 @@ tags_count(cnbc)
 cnbc.head(3)
 
 
-# In[90]:
+
 
 
 # saving the dataset to CSV file
@@ -233,7 +229,7 @@ cnbc.to_csv('cnbc_extracted.csv', index=False)
 
 # ## CNN News dataset
 
-# In[20]:
+
 
 
 # reading CNN news CSV file from a local location
@@ -241,7 +237,7 @@ cnn = pd.read_csv("cnn_cleaned.csv")
 cnn.head(3)
 
 
-# In[22]:
+
 
 
 # extracting  clean text, published date and title from HTML script using CNN articles URLs  
@@ -253,7 +249,7 @@ cnn.insert(2,'extracted_published_date', extracted_published_date)
 cnn.head(3)
 
 
-# In[23]:
+
 
 
 # extracting  person names, organization names and places names from HTML script using CNN articles URLs
@@ -265,7 +261,7 @@ cnn.insert(5,'extractedkeyw_pla', extractedkeyw_pla)
 cnn.head(3)
 
 
-# In[24]:
+
 
 
 # counting number of repeats for person names, organization names and places for CNN dataset
@@ -273,7 +269,7 @@ tags_count(cnn)
 cnn.head(3)
 
 
-# In[ ]:
+
 
 
 # saving the dataset to CSV file
@@ -282,7 +278,7 @@ cnn1.to_csv('cnn_extracted.csv', index=False)
 
 # ## japan_times News dataset
 
-# In[25]:
+
 
 
 # reading Japan Times news CSV file from a local location
@@ -290,7 +286,7 @@ japan_times = pd.read_csv("japan_times_cleaned.csv")
 japan_times.head(3)
 
 
-# In[27]:
+
 
 
 # extracting  clean text, published date and title from HTML script using Japan Times articles URLs  
@@ -302,7 +298,7 @@ japan_times.insert(2,'extracted_published_date', extracted_published_date)
 japan_times.head(3)
 
 
-# In[28]:
+
 
 
 # extracting  person names, organization names and places names from HTML script using Japan Times articles URLs
@@ -314,7 +310,7 @@ japan_times.insert(5,'extractedkeyw_pla', extractedkeyw_pla)
 japan_times.head(3)
 
 
-# In[29]:
+
 
 
 # counting number of repeats for person names, organization names and places for Japan Times dataset
@@ -322,7 +318,7 @@ tags_count(japan_times)
 japan_times.head(3)
 
 
-# In[ ]:
+
 
 
 # saving the dataset to CSV file

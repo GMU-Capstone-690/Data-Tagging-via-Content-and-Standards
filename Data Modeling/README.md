@@ -5,5 +5,5 @@ Following pre-processing steps are done to prepare data for LDA model:
 - Tokenization (Convert sentences to bag of words)
 - Creating unigram, bigram & trigrams
 - Lemmatization while keeping only nouns, adjectives, verbs & adverbs
-- 
+
 Then master dictionary and corpus are generated which are input of LDA model. Model evaluation matrix like perplexity and coherence along with optimal number of topics are calculated in Modeling.py. 

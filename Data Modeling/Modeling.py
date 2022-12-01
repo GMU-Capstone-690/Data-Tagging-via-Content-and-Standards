@@ -1,9 +1,7 @@
-#!/usr/bin/env python
-# coding: utf-8
+
 
 # ## Tag Organizer Function
 
-# In[766]:
 
 
 # UDF to clean aand prapre 'extractedkeyw_per', 'extractedkeyw_org','extractedkeyw_pla' columns
@@ -23,7 +21,7 @@ def tags_organizer(dataframe):
 
 # ## Tag Counter Function
 
-# In[795]:
+
 
 
 pd.options.mode.chained_assignment = None
@@ -40,7 +38,7 @@ def tags_counter(dataframe):
 
 # ## Loading Aljazeera dataset with extracted candidate tags
 
-# In[813]:
+
 
 
 import pandas as pd
@@ -50,7 +48,7 @@ aljazeera
 
 # ### Import/Install Required Libraries and Packages
 
-# In[534]:
+
 
 
 import re
@@ -87,7 +85,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 
 # ### EDA - Wordcloud from titles for possible descriptor tags
 
-# In[535]:
+
 
 
 #Creating the text variable
@@ -109,7 +107,7 @@ plt.show()
 
 # ### Text Preprocessing,Cleaning and Tokenization
 
-# In[536]:
+
 
 
 # Convert to list
@@ -126,7 +124,7 @@ data1 = [re.sub("\'", "", sent) for sent in data1]
 pprint(data1[1001:1002])
 
 
-# In[537]:
+
 
 
 #Function for tokenizing
@@ -141,7 +139,7 @@ print(data_words[1001:1002])
 
 # ### Prepare NLTK Stop words
 
-# In[538]:
+
 
 
 from nltk.corpus import stopwords
@@ -152,7 +150,7 @@ stop_words.extend(list(STOP_WORDS))
 stop_words.extend(['said','say'])
 
 
-# In[539]:
+
 
 
 print(stop_words)
@@ -160,7 +158,7 @@ print(stop_words)
 
 # ### Visualizing Unigrams in text before and after removing stopwords
 
-# In[540]:
+
 
 
 import cufflinks as cf
@@ -168,7 +166,7 @@ cf.go_offline()
 cf.set_config_file(offline=False, world_readable=True)
 
 
-# In[541]:
+
 
 
 #The distribution of top unigrams before removing stop words
@@ -188,7 +186,7 @@ df2.groupby('extracted_clean_text').sum()['count'].sort_values(ascending=False).
     kind='bar', yTitle='Count', linecolor='black', title='Top 20 unigrams in text before removing stop words')
 
 
-# In[542]:
+
 
 
 #The distribution of top unigrams after removing stop words
@@ -210,7 +208,7 @@ df3.groupby('extracted_clean_text').sum()['count'].sort_values(ascending=False).
 
 # ### Identifying bigrams/trigrams and Lemmatization
 
-# In[543]:
+
 
 
 # Build the bigram and trigram models
@@ -225,7 +223,7 @@ trigram_mod = gensim.models.phrases.Phraser(trigram)
 print(trigram_mod[bigram_mod[data_words[1001]]])
 
 
-# In[544]:
+
 
 
 # Define functions for stopwords, bigrams, trigrams and lemmatization
@@ -247,7 +245,7 @@ def lemmatization(texts, allowed_postags=['NOUN', 'ADJ', 'VERB', 'ADV']):
     return texts_out
 
 
-# In[545]:
+
 
 
 # Remove Stop Words
@@ -268,7 +266,6 @@ print(data_lemmatized1[1001:1002])
 
 # ### Visualizing Bigrams in text before and after removing stopwords
 
-# In[546]:
 
 
 #The distribution of top bigrams before removing stop words
@@ -288,7 +285,7 @@ df4.groupby('extracted_clean_text').sum()['count'].sort_values(ascending=False).
     kind='bar', yTitle='Count', linecolor='black', title='Top 20 bigrams in review before removing stop words')
 
 
-# In[547]:
+
 
 
 #The distribution of top bigrams after removing stop words
@@ -310,7 +307,7 @@ df5.groupby('extracted_clean_text').sum()['count'].sort_values(ascending=False).
 
 # ### Visualizing Trigrams in text before and after removing stopwords
 
-# In[548]:
+
 
 
 #The distribution of Top trigrams before removing stop words
@@ -330,7 +327,7 @@ df6.groupby('extracted_clean_text').sum()['count'].sort_values(ascending=False).
     kind='bar', yTitle='Count', linecolor='black', title='Top 20 trigrams in review before removing stop words')
 
 
-# In[549]:
+
 
 
 #The distribution of Top trigrams after removing stop words
@@ -354,7 +351,7 @@ df7.groupby('extracted_clean_text').sum()['count'].sort_values(ascending=False).
 
 # ## Loading BBC dataset with extracted candidate tags
 
-# In[945]:
+
 
 
 import pandas as pd
@@ -364,7 +361,7 @@ bbc
 
 # ### Import/Install Required Libraries and Packages
 
-# In[ ]:
+
 
 
 import re
@@ -401,7 +398,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 
 # ### EDA - Wordcloud from titles for possible descriptor tags
 
-# In[ ]:
+
 
 
 #Creating the text variable
@@ -423,7 +420,7 @@ plt.show()
 
 # ### Text Preprocessing,Cleaning and Tokenization
 
-# In[902]:
+
 
 
 # Convert to list
@@ -440,7 +437,7 @@ data2 = [re.sub("\'", "", sent) for sent in data2]
 pprint(data2[1001:1002])
 
 
-# In[903]:
+
 
 
 #Function for tokenizing
@@ -455,7 +452,7 @@ print(data_words[1001:1002])
 
 # ### Prepare NLTK Stop words
 
-# In[904]:
+
 
 
 from nltk.corpus import stopwords
@@ -466,7 +463,7 @@ stop_words.extend(list(STOP_WORDS))
 stop_words.extend(['said','say'])
 
 
-# In[905]:
+
 
 
 print(stop_words)
@@ -474,7 +471,7 @@ print(stop_words)
 
 # ### Visualizing Unigrams in text before and after removing stopwords
 
-# In[906]:
+
 
 
 import cufflinks as cf
@@ -482,7 +479,7 @@ cf.go_offline()
 cf.set_config_file(offline=False, world_readable=True)
 
 
-# In[907]:
+
 
 
 #The distribution of top unigrams before removing stop words
@@ -502,7 +499,7 @@ df2.groupby('extracted_clean_text').sum()['count'].sort_values(ascending=False).
     kind='bar', yTitle='Count', linecolor='black', title='Top 20 unigrams in text before removing stop words')
 
 
-# In[908]:
+
 
 
 #The distribution of top unigrams after removing stop words
@@ -524,7 +521,7 @@ df3.groupby('extracted_clean_text').sum()['count'].sort_values(ascending=False).
 
 # ### Identifying bigrams/trigrams & lemmatization
 
-# In[909]:
+
 
 
 # Build the bigram and trigram models
@@ -539,7 +536,7 @@ trigram_mod = gensim.models.phrases.Phraser(trigram)
 print(trigram_mod[bigram_mod[data_words[1001]]])
 
 
-# In[910]:
+
 
 
 # Define functions for stopwords, bigrams, trigrams and lemmatization
@@ -561,7 +558,7 @@ def lemmatization(texts, allowed_postags=['NOUN', 'ADJ', 'VERB', 'ADV']):
     return texts_out
 
 
-# In[911]:
+
 
 
 # Remove Stop Words
@@ -582,7 +579,7 @@ print(data_lemmatized2[1001:1002])
 
 # ### Visualizing Bigrams in text before and after removing stopwords
 
-# In[ ]:
+
 
 
 #The distribution of top bigrams before removing stop words
@@ -602,7 +599,7 @@ df4.groupby('extracted_clean_text').sum()['count'].sort_values(ascending=False).
     kind='bar', yTitle='Count', linecolor='black', title='Top 20 bigrams in review before removing stop words')
 
 
-# In[ ]:
+
 
 
 #The distribution of top bigrams after removing stop words
@@ -624,7 +621,7 @@ df5.groupby('extracted_clean_text').sum()['count'].sort_values(ascending=False).
 
 # ### Visualizing Trigrams in text before and after removing stopwords
 
-# In[ ]:
+
 
 
 #The distribution of Top trigrams before removing stop words
@@ -644,7 +641,7 @@ df6.groupby('extracted_clean_text').sum()['count'].sort_values(ascending=False).
     kind='bar', yTitle='Count', linecolor='black', title='Top 20 trigrams in review before removing stop words')
 
 
-# In[ ]:
+
 
 
 #The distribution of Top trigrams after removing stop words
@@ -668,7 +665,7 @@ df7.groupby('extracted_clean_text').sum()['count'].sort_values(ascending=False).
 
 # ## Loading CNN dataset with extracted candidate tags
 
-# In[861]:
+
 
 
 import pandas as pd
@@ -678,7 +675,7 @@ cnn
 
 # ### Import/Install Required Libraries and Packages
 
-# In[44]:
+
 
 
 import re
@@ -715,7 +712,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 
 # ### EDA - Wordcloud from titles for possible descriptor tags
 
-# In[45]:
+
 
 
 #Creating the text variable
@@ -737,7 +734,7 @@ plt.show()
 
 # ### Text Preprocessing,Cleaning and Tokenization
 
-# In[122]:
+
 
 
 # Convert to list
@@ -754,7 +751,7 @@ data3 = [re.sub("\'", "", sent) for sent in data3]
 pprint(data3[1001:1002])
 
 
-# In[47]:
+
 
 
 #Function for tokenizing
@@ -769,7 +766,7 @@ print(data_words[1001:1002])
 
 # ### Prepare NLTK Stop words
 
-# In[48]:
+
 
 
 from nltk.corpus import stopwords
@@ -780,7 +777,7 @@ stop_words.extend(list(STOP_WORDS))
 stop_words.extend(['said','say'])
 
 
-# In[49]:
+
 
 
 print(stop_words)
@@ -788,7 +785,7 @@ print(stop_words)
 
 # ### Visualizing Unigrams in text before and after removing stopwords
 
-# In[50]:
+
 
 
 import cufflinks as cf
@@ -796,7 +793,7 @@ cf.go_offline()
 cf.set_config_file(offline=False, world_readable=True)
 
 
-# In[51]:
+
 
 
 #The distribution of top unigrams before removing stop words
@@ -816,7 +813,7 @@ df2.groupby('extracted_clean_text').sum()['count'].sort_values(ascending=False).
     kind='bar', yTitle='Count', linecolor='black', title='Top 20 unigrams in text before removing stop words')
 
 
-# In[52]:
+
 
 
 #The distribution of top unigrams after removing stop words
@@ -838,7 +835,7 @@ df3.groupby('extracted_clean_text').sum()['count'].sort_values(ascending=False).
 
 # ### Identifying bigrams/trigrams
 
-# In[53]:
+
 
 
 # Build the bigram and trigram models
@@ -853,7 +850,7 @@ trigram_mod = gensim.models.phrases.Phraser(trigram)
 print(trigram_mod[bigram_mod[data_words[1001]]])
 
 
-# In[54]:
+
 
 
 # Define functions for stopwords, bigrams, trigrams and lemmatization
@@ -875,7 +872,7 @@ def lemmatization(texts, allowed_postags=['NOUN', 'ADJ', 'VERB', 'ADV']):
     return texts_out
 
 
-# In[56]:
+
 
 
 # Remove Stop Words
@@ -896,7 +893,7 @@ print(data_lemmatized3[1001:1002])
 
 # ### Visualizing Bigrams in text before and after removing stopwords
 
-# In[57]:
+
 
 
 #The distribution of top bigrams before removing stop words
@@ -916,7 +913,7 @@ df4.groupby('extracted_clean_text').sum()['count'].sort_values(ascending=False).
     kind='bar', yTitle='Count', linecolor='black', title='Top 20 bigrams in review before removing stop words')
 
 
-# In[58]:
+
 
 
 #The distribution of top bigrams after removing stop words
@@ -938,7 +935,7 @@ df5.groupby('extracted_clean_text').sum()['count'].sort_values(ascending=False).
 
 # ### Visualizing Trigrams in text before and after removing stopwords
 
-# In[59]:
+
 
 
 #The distribution of Top trigrams before removing stop words
@@ -958,7 +955,7 @@ df6.groupby('extracted_clean_text').sum()['count'].sort_values(ascending=False).
     kind='bar', yTitle='Count', linecolor='black', title='Top 20 trigrams in review before removing stop words')
 
 
-# In[60]:
+
 
 
 #The distribution of Top trigrams after removing stop words
@@ -978,7 +975,7 @@ df7.groupby('extracted_clean_text').sum()['count'].sort_values(ascending=False).
     kind='bar', yTitle='Count', linecolor='black', title='Top 20 trigrams in review after removing stop words')
 
 
-# In[ ]:
+
 
 
 
@@ -986,7 +983,7 @@ df7.groupby('extracted_clean_text').sum()['count'].sort_values(ascending=False).
 
 # # Create Master Dictionary and corpus for all 3 candidate datasets
 
-# In[515]:
+
 
 
 # Create Dictionary
@@ -1002,7 +999,7 @@ corpus2 = [id2word1.doc2bow(text) for text in data_lemmatized2]
 corpus3 = [id2word1.doc2bow(text) for text in data_lemmatized3]
 
 
-# In[912]:
+
 
 
 corpus2 = [id2word1.doc2bow(text) for text in data_lemmatized2]
@@ -1012,7 +1009,7 @@ corpus2 = [id2word1.doc2bow(text) for text in data_lemmatized2]
 
 # ### Build LDA model
 
-# In[516]:
+
 
 
 
@@ -1029,7 +1026,7 @@ lda_model = gensim.models.ldamodel.LdaModel(corpus=corpus1,
 
 # ### Measure Metrics of Model - Coherence/Perplexity
 
-# In[517]:
+
 
 
 # Compute Perplexity
@@ -1043,7 +1040,7 @@ print('\nCoherence Score: ', coherence_lda)
 
 # ### Visualization of Topics identified by Model
 
-# In[518]:
+
 
 
 # Visualize the topics
@@ -1056,7 +1053,7 @@ vis
 
 # ### Building LDA-Mallet model for comparision
 
-# In[519]:
+
 
 
 import os
@@ -1069,7 +1066,7 @@ mallet_path = 'C:/Users/Madesh/mallet-2.0.8/mallet-2.0.8/bin/mallet.bat'
 ldamallet = gensim.models.wrappers.LdaMallet(mallet_path, corpus=corpus1, num_topics=8, id2word=id2word1)
 
 
-# In[520]:
+
 
 
 # Show Topics
@@ -1083,7 +1080,7 @@ print('\nCoherence Score: ', coherence_ldamallet)
 
 # ### Find Optimal number of topics to feed the model to identify
 
-# In[554]:
+
 
 
 def compute_coherence_values(dictionary, corpus, texts, limit, start=2, step=2):
@@ -1113,13 +1110,13 @@ def compute_coherence_values(dictionary, corpus, texts, limit, start=2, step=2):
     return model_list, coherence_values
 
 
-# In[555]:
+
 
 
 model_list, coherence_values = compute_coherence_values(dictionary=id2word1, corpus=corpus1, texts=data_lemmatized1, start=2, limit=14, step=2)
 
 
-# In[556]:
+
 
 
 # Show graph
@@ -1132,7 +1129,7 @@ plt.legend(("coherence_values"), loc='best')
 plt.show()
 
 
-# In[563]:
+
 
 
 # Print the coherence scores
@@ -1140,7 +1137,7 @@ for m, cv in zip(x, coherence_values):
     print("Num Topics =", m, " has Coherence Value of", round(cv, 4))
 
 
-# In[564]:
+
 
 
 cv_values = []
@@ -1154,7 +1151,7 @@ index
 
 # #### selecting the most optimal and efficient number of topics <10 to make sure the articles are not overclassified
 
-# In[565]:
+
 
 
 # Select the model and print the topics
@@ -1165,7 +1162,7 @@ pprint(optimal_model.print_topics(num_words=10))
 
 # ### Convert Mallet model to LDA model to visualize the topics
 
-# In[566]:
+
 
 
 def convertldaGenToldaMallet(mallet_model):
@@ -1180,7 +1177,7 @@ def convertldaGenToldaMallet(mallet_model):
 optimal_model = convertldaGenToldaMallet(optimal_model)
 
 
-# In[567]:
+
 
 
 #Visualizing Opitmal Model
@@ -1192,7 +1189,7 @@ vis
 
 # ### Dominant topic in each sentence
 
-# In[826]:
+
 
 
 def format_topics_sentences(ldamodel=optimal_model, corpus=corpus1, texts=data):
@@ -1228,7 +1225,7 @@ df_dominant_topic_aljazeera.columns = ['Document_No', 'Dominant_Topic', 'Topic_P
 df_dominant_topic_aljazeera.head(10)
 
 
-# In[574]:
+
 
 
 df_dominant_topic_aljazeera[(df_dominant_topic_aljazeera.Dominant_Topic == 1) & (df_dominant_topic_aljazeera.Topic_Perc_Contrib > 0.5)]
@@ -1236,7 +1233,7 @@ df_dominant_topic_aljazeera[(df_dominant_topic_aljazeera.Dominant_Topic == 1) & 
 
 # ### Most representative document for each topic
 
-# In[569]:
+
 
 
 # Group top article under each topic
@@ -1261,7 +1258,7 @@ sent_topics_sorteddf_mallet
 
 # ### Visualizing Word Count and Importance of Topic Keywords
 
-# In[570]:
+
 
 
 import matplotlib.colors as mcolors
@@ -1298,13 +1295,13 @@ plt.show()
 
 # ### Topic labelling
 
-# In[827]:
+
 
 
 topic_labels = ["Economy","Accidents_Disaster","Israeli_Palestinian_Conflict","Politics","Crime","Education","War","Science","Legal","Government"]   
 
 
-# In[828]:
+
 
 
 from matplotlib import pyplot as plt
@@ -1345,7 +1342,7 @@ plt.show()
 # ### Save LDA model
 # 
 
-# In[880]:
+
 
 
 from gensim.test.utils import datapath
@@ -1355,31 +1352,31 @@ optimal_model.save(temp_file)
 
 # ### Grouping Dataset as collections based on identified Topics
 
-# In[829]:
+
 
 
 df_dominant_topic_aljazeera['Dominant_Topic'] = df_dominant_topic_aljazeera['Dominant_Topic'].replace([0,1,2,3,4,5,6,7,8,9], topic_labels)
 
 
-# In[830]:
+
 
 
 topic_extracted = df_dominant_topic_aljazeera[['Dominant_Topic', 'Keywords']]
 
 
-# In[814]:
+
 
 
 tags_organizer(aljazeera)
 
 
-# In[831]:
+
 
 
 al_tagged = pd.concat([aljazeera, topic_extracted], axis=1)
 
 
-# In[832]:
+
 
 
 Aljazeera_Collections=[]
@@ -1389,13 +1386,13 @@ for i, x in al_tagged.groupby('Dominant_Topic'):
 Aljazeera_Collections
 
 
-# In[858]:
+
 
 
 Aljazeera_tagged_Economy
 
 
-# In[847]:
+
 
 
 print(tags_counter(Aljazeera_tagged_Accidents_Disaster))
@@ -1403,7 +1400,7 @@ print(Aljazeera_tagged_Accidents_Disaster.extracted_published_date.min())
 print(Aljazeera_tagged_Accidents_Disaster.extracted_published_date.max())
 
 
-# In[850]:
+
 
 
 print(tags_counter(Aljazeera_tagged_Crime))
@@ -1411,7 +1408,7 @@ print(Aljazeera_tagged_Crime.extracted_published_date.min())
 print(Aljazeera_tagged_Crime.extracted_published_date.max())
 
 
-# In[851]:
+
 
 
 print(tags_counter(Aljazeera_tagged_Economy))
@@ -1419,7 +1416,7 @@ print(Aljazeera_tagged_Economy.extracted_published_date.min())
 print(Aljazeera_tagged_Economy.extracted_published_date.max())
 
 
-# In[852]:
+
 
 
 print(tags_counter(Aljazeera_tagged_Education))
@@ -1427,7 +1424,7 @@ print(Aljazeera_tagged_Education.extracted_published_date.min())
 print(Aljazeera_tagged_Education.extracted_published_date.max())
 
 
-# In[853]:
+
 
 
 print(tags_counter(Aljazeera_tagged_Israeli_Palestinian_Conflict))
@@ -1435,7 +1432,7 @@ print(Aljazeera_tagged_Israeli_Palestinian_Conflict.extracted_published_date.min
 print(Aljazeera_tagged_Israeli_Palestinian_Conflict.extracted_published_date.max())
 
 
-# In[854]:
+
 
 
 print(tags_counter(Aljazeera_tagged_Legal))
@@ -1443,7 +1440,7 @@ print(Aljazeera_tagged_Legal.extracted_published_date.min())
 print(Aljazeera_tagged_Legal.extracted_published_date.max())
 
 
-# In[855]:
+
 
 
 print(tags_counter(Aljazeera_tagged_Politics))
@@ -1451,7 +1448,7 @@ print(Aljazeera_tagged_Politics.extracted_published_date.min())
 print(Aljazeera_tagged_Politics.extracted_published_date.max())
 
 
-# In[856]:
+
 
 
 print(tags_counter(Aljazeera_tagged_Science))
@@ -1459,7 +1456,7 @@ print(Aljazeera_tagged_Science.extracted_published_date.min())
 print(Aljazeera_tagged_Science.extracted_published_date.max())
 
 
-# In[857]:
+
 
 
 print(tags_counter(Aljazeera_tagged_War))
@@ -1471,7 +1468,7 @@ print(Aljazeera_tagged_War.extracted_published_date.max())
 
 # ### Load the Pre-Trained LDA Topic Model
 
-# In[881]:
+
 
 
 # Load LDA model
@@ -1482,7 +1479,7 @@ lda_model = gensim.models.ldamodel.LdaModel.load(temp_file)
 
 # ### Load Master Dictionary
 
-# In[883]:
+
 
 
 from gensim.test.utils import datapath
@@ -1492,7 +1489,7 @@ dictionary = corpora.Dictionary.load(temp_file)
 
 # ### Update Model's corpus
 
-# In[913]:
+
 
 
 lda_model.update(corpus2)
@@ -1500,7 +1497,7 @@ lda_model.update(corpus2)
 
 # ### Model Tuning using LDA Mallet
 
-# In[914]:
+
 
 
 import os
@@ -1513,7 +1510,7 @@ mallet_path = 'C:/Users/Madesh/mallet-2.0.8/mallet-2.0.8/bin/mallet.bat'
 ldamallet = gensim.models.wrappers.LdaMallet(mallet_path, corpus=corpus2, num_topics=index*2+2, id2word=dictionary)
 
 
-# In[915]:
+
 
 
 # Show Topics
@@ -1527,7 +1524,7 @@ print('\nCoherence Score: ', coherence_ldamallet)
 
 # ### Find Optimal number of topics to feed the model to identify
 
-# In[922]:
+
 
 
 def compute_coherence_values(dictionary, corpus, texts, limit, start=2, step=2):
@@ -1557,13 +1554,13 @@ def compute_coherence_values(dictionary, corpus, texts, limit, start=2, step=2):
     return model_list, coherence_values
 
 
-# In[923]:
+
 
 
 model_list, coherence_values = compute_coherence_values(dictionary=dictionary, corpus=corpus2, texts=data_lemmatized2, start=2, limit=14, step=2)
 
 
-# In[924]:
+
 
 
 # Show graph
@@ -1576,7 +1573,7 @@ plt.legend(("coherence_values"), loc='best')
 plt.show()
 
 
-# In[925]:
+
 
 
 # Print the coherence scores
@@ -1584,7 +1581,7 @@ for m, cv in zip(x, coherence_values):
     print("Num Topics =", m, " has Coherence Value of", round(cv, 4))
 
 
-# In[926]:
+
 
 
 cv_values = []
@@ -1598,7 +1595,7 @@ index
 
 # #### selecting the most optimal and efficient number of topics <10 to make sure the articles are not overclassified
 
-# In[927]:
+
 
 
 # Select the model and print the topics
@@ -1609,7 +1606,7 @@ pprint(optimal_model.print_topics(num_words=10))
 
 # ### Convert Mallet model to LDA model to visualize the topics
 
-# In[928]:
+
 
 
 def convertldaGenToldaMallet(mallet_model):
@@ -1624,7 +1621,7 @@ def convertldaGenToldaMallet(mallet_model):
 optimal_model = convertldaGenToldaMallet(optimal_model)
 
 
-# In[929]:
+
 
 
 #Visualizing Opitmal Model
@@ -1636,7 +1633,7 @@ vis
 
 # ### Dominant topic in each sentence
 
-# In[932]:
+
 
 
 def format_topics_sentences(ldamodel=optimal_model, corpus=corpus2, texts=data):
@@ -1674,7 +1671,7 @@ df_dominant_topic_bbc.head(10)
 
 # ### Most representative document for each topic
 
-# In[934]:
+
 
 
 # Group top article under each topic
@@ -1697,7 +1694,7 @@ sent_topics_sorteddf_mallet.columns = ['Topic_Num', "Topic_Perc_Contrib", "Keywo
 sent_topics_sorteddf_mallet
 
 
-# In[938]:
+
 
 
 df_dominant_topic_bbc[(df_dominant_topic_bbc.Dominant_Topic == 5) & (df_dominant_topic_bbc.Topic_Perc_Contrib > 0.40)]
@@ -1705,7 +1702,7 @@ df_dominant_topic_bbc[(df_dominant_topic_bbc.Dominant_Topic == 5) & (df_dominant
 
 # ### Visualizing Word Count and Importance of Topic Keywords
 
-# In[931]:
+
 
 
 import matplotlib.colors as mcolors
@@ -1742,13 +1739,12 @@ plt.show()
 
 # ### Topic labelling
 
-# In[939]:
 
 
 topic_labels = ["Health","Economy","Legal","Government","Entertainment","World","Violence","Accident"]   
 
 
-# In[940]:
+
 
 
 from matplotlib import pyplot as plt
@@ -1788,7 +1784,7 @@ plt.show()
 
 # ### save LDA model
 
-# In[941]:
+
 
 
 from gensim.test.utils import datapath
@@ -1796,7 +1792,7 @@ temp_file = datapath("model_1")
 optimal_model.save(temp_file)
 
 
-# In[ ]:
+
 
 
 
@@ -1804,31 +1800,31 @@ optimal_model.save(temp_file)
 
 # ### Grouping Dataset as collections based on identified Topics
 
-# In[942]:
+
 
 
 df_dominant_topic_bbc['Dominant_Topic'] = df_dominant_topic_bbc['Dominant_Topic'].replace([0,1,2,3,4,5,6,7], topic_labels)
 
 
-# In[943]:
+
 
 
 topic_extracted = df_dominant_topic_bbc[['Dominant_Topic', 'Keywords']]
 
 
-# In[946]:
+
 
 
 tags_organizer(bbc)
 
 
-# In[947]:
+
 
 
 bbc_tagged = pd.concat([bbc, topic_extracted], axis=1)
 
 
-# In[948]:
+
 
 
 BBC_Collections=[]
@@ -1838,13 +1834,12 @@ for i, x in bbc_tagged.groupby('Dominant_Topic'):
 BBC_Collections
 
 
-# In[949]:
 
 
 BBC_tagged_Economy
 
 
-# In[950]:
+
 
 
 print(tags_counter(BBC_tagged_Accident))
@@ -1852,7 +1847,7 @@ print(BBC_tagged_Accident.extracted_published_date.min())
 print(BBC_tagged_Accident.extracted_published_date.max())
 
 
-# In[951]:
+
 
 
 print(tags_counter(BBC_tagged_Economy))
@@ -1860,7 +1855,7 @@ print(BBC_tagged_Economy.extracted_published_date.min())
 print(BBC_tagged_Economy.extracted_published_date.max())
 
 
-# In[952]:
+
 
 
 print(tags_counter(BBC_tagged_Entertainment))
@@ -1868,7 +1863,7 @@ print(BBC_tagged_Entertainment.extracted_published_date.min())
 print(BBC_tagged_Entertainment.extracted_published_date.max())
 
 
-# In[953]:
+
 
 
 print(tags_counter(BBC_tagged_Health))
@@ -1876,7 +1871,7 @@ print(BBC_tagged_Health.extracted_published_date.min())
 print(BBC_tagged_Health.extracted_published_date.max())
 
 
-# In[954]:
+
 
 
 print(tags_counter(BBC_tagged_Legal))
@@ -1884,7 +1879,7 @@ print(BBC_tagged_Legal.extracted_published_date.min())
 print(BBC_tagged_Legal.extracted_published_date.max())
 
 
-# In[955]:
+
 
 
 print(tags_counter(BBC_tagged_Violence))
@@ -1892,7 +1887,7 @@ print(BBC_tagged_Violence.extracted_published_date.min())
 print(BBC_tagged_Violence.extracted_published_date.max())
 
 
-# In[956]:
+
 
 
 print(tags_counter(BBC_tagged_World))
@@ -1904,7 +1899,7 @@ print(BBC_tagged_World.extracted_published_date.max())
 
 # ### Load the Pre-Trained LDA Topic Model
 
-# In[957]:
+
 
 
 # Load LDA model
@@ -1915,7 +1910,7 @@ lda_model = gensim.models.ldamodel.LdaModel.load(temp_file)
 
 # ### Load Master Dictionary
 
-# In[958]:
+
 
 
 from gensim.test.utils import datapath
@@ -1925,7 +1920,6 @@ dictionary = corpora.Dictionary.load(temp_file)
 
 # ### Update Model's corpus
 
-# In[959]:
 
 
 lda_model.update(corpus3)
@@ -1933,7 +1927,7 @@ lda_model.update(corpus3)
 
 # ### Model Tuning using LDA Mallet
 
-# In[960]:
+
 
 
 import os
@@ -1946,7 +1940,7 @@ mallet_path = 'C:/Users/Madesh/mallet-2.0.8/mallet-2.0.8/bin/mallet.bat'
 ldamallet = gensim.models.wrappers.LdaMallet(mallet_path, corpus=corpus3, num_topics=index*2+2, id2word=dictionary)
 
 
-# In[961]:
+
 
 
 # Show Topics
@@ -1960,7 +1954,7 @@ print('\nCoherence Score: ', coherence_ldamallet)
 
 # ### Find Optimal number of topics to feed the model to identify
 
-# In[983]:
+
 
 
 def compute_coherence_values(dictionary, corpus, texts, limit, start=2, step=2):
@@ -1990,13 +1984,13 @@ def compute_coherence_values(dictionary, corpus, texts, limit, start=2, step=2):
     return model_list, coherence_values
 
 
-# In[985]:
+
 
 
 model_list, coherence_values = compute_coherence_values(dictionary=dictionary, corpus=corpus3, texts=data_lemmatized3, start=2, limit=14, step=2)
 
 
-# In[986]:
+
 
 
 # Show graph
@@ -2009,7 +2003,7 @@ plt.legend(("coherence_values"), loc='best')
 plt.show()
 
 
-# In[987]:
+
 
 
 # Print the coherence scores
@@ -2017,7 +2011,7 @@ for m, cv in zip(x, coherence_values):
     print("Num Topics =", m, " has Coherence Value of", round(cv, 4))
 
 
-# In[988]:
+
 
 
 cv_values = []
@@ -2031,7 +2025,7 @@ index
 
 # #### selecting the most optimal and efficient number of topics <10 to make sure the articles are not overclassified
 
-# In[989]:
+
 
 
 # Select the model and print the topics
@@ -2042,7 +2036,7 @@ pprint(optimal_model.print_topics(num_words=10))
 
 # ### Convert Mallet model to LDA model to visualize the topics
 
-# In[990]:
+
 
 
 def convertldaGenToldaMallet(mallet_model):
@@ -2057,7 +2051,7 @@ def convertldaGenToldaMallet(mallet_model):
 optimal_model = convertldaGenToldaMallet(optimal_model)
 
 
-# In[991]:
+
 
 
 #Visualizing Opitmal Model
@@ -2069,7 +2063,7 @@ vis
 
 # ### Dominant topic in each sentence
 
-# In[1020]:
+
 
 
 def format_topics_sentences(ldamodel=optimal_model, corpus=corpus3, texts=data):
@@ -2107,7 +2101,7 @@ df_dominant_topic_cnn.head(10)
 
 # ### Most representative document for each topic
 
-# In[993]:
+
 
 
 # Group top article under each topic
@@ -2130,7 +2124,7 @@ sent_topics_sorteddf_mallet.columns = ['Topic_Num', "Topic_Perc_Contrib", "Keywo
 sent_topics_sorteddf_mallet
 
 
-# In[1000]:
+
 
 
 df_dominant_topic_cnn[(df_dominant_topic_cnn.Dominant_Topic == 1) & (df_dominant_topic.Topic_Perc_Contrib > 0.4)]
@@ -2138,7 +2132,7 @@ df_dominant_topic_cnn[(df_dominant_topic_cnn.Dominant_Topic == 1) & (df_dominant
 
 # ### Visualizing Word Count and Importance of Topic Keywords
 
-# In[994]:
+
 
 
 import matplotlib.colors as mcolors
@@ -2174,13 +2168,13 @@ plt.show()
 
 # ### Topic Labelling
 
-# In[1021]:
+
 
 
 topic_labels = ["Politics","Local","Sports_Racing","Legal","Government","Crime","Sports_Tennis","Sports_Football","Sports_Soccer","Sports_Golf"]   
 
 
-# In[1003]:
+
 
 
 from matplotlib import pyplot as plt
@@ -2220,7 +2214,7 @@ plt.show()
 
 # ### save LDA model
 
-# In[1004]:
+
 
 
 from gensim.test.utils import datapath
@@ -2230,37 +2224,37 @@ optimal_model.save(temp_file)
 
 # ### Grouping Dataset as collections based on identified Topics
 
-# In[1023]:
+
 
 
 df_dominant_topic_cnn
 
 
-# In[1022]:
+
 
 
 df_dominant_topic_cnn['Dominant_Topic'] = df_dominant_topic_cnn['Dominant_Topic'].replace([0,1,2,3,4,5,6,7,8,9], topic_labels)
 
 
-# In[1024]:
+
 
 
 topic_extracted = df_dominant_topic_cnn[['Dominant_Topic', 'Keywords']]
 
 
-# In[1015]:
+
 
 
 tags_organizer(cnn)
 
 
-# In[1025]:
+
 
 
 cnn_tagged = pd.concat([cnn, topic_extracted], axis=1)
 
 
-# In[1026]:
+
 
 
 CNN_Collections=[]
@@ -2270,13 +2264,13 @@ for i, x in cnn_tagged.groupby('Dominant_Topic'):
 CNN_Collections
 
 
-# In[1028]:
+
 
 
 CNN_tagged_Sports_Racing
 
 
-# In[1029]:
+
 
 
 print(tags_counter(CNN_tagged_Crime))
@@ -2284,7 +2278,7 @@ print(CNN_tagged_Crime.extracted_published_date.min())
 print(CNN_tagged_Crime.extracted_published_date.max())
 
 
-# In[1030]:
+
 
 
 print(tags_counter(CNN_tagged_Government))
@@ -2292,7 +2286,7 @@ print(CNN_tagged_Government.extracted_published_date.min())
 print(CNN_tagged_Government.extracted_published_date.max())
 
 
-# In[1031]:
+
 
 
 print(tags_counter(CNN_tagged_Legal))
@@ -2300,7 +2294,7 @@ print(CNN_tagged_Legal.extracted_published_date.min())
 print(CNN_tagged_Legal.extracted_published_date.max())
 
 
-# In[1032]:
+
 
 
 print(tags_counter(CNN_tagged_Local))
@@ -2308,7 +2302,7 @@ print(CNN_tagged_Local.extracted_published_date.min())
 print(CNN_tagged_Local.extracted_published_date.max())
 
 
-# In[1033]:
+
 
 
 print(tags_counter(CNN_tagged_Politics))
@@ -2316,7 +2310,6 @@ print(CNN_tagged_Politics.extracted_published_date.min())
 print(CNN_tagged_Politics.extracted_published_date.max())
 
 
-# In[1034]:
 
 
 print(tags_counter(CNN_tagged_Sports_Football))
@@ -2324,7 +2317,6 @@ print(CNN_tagged_Sports_Football.extracted_published_date.min())
 print(CNN_tagged_Sports_Football.extracted_published_date.max())
 
 
-# In[1035]:
 
 
 print(tags_counter(CNN_tagged_Sports_Golf))
@@ -2332,7 +2324,7 @@ print(CNN_tagged_Sports_Golf.extracted_published_date.min())
 print(CNN_tagged_Sports_Golf.extracted_published_date.max())
 
 
-# In[1036]:
+
 
 
 print(tags_counter(CNN_tagged_Sports_Racing))
@@ -2340,7 +2332,7 @@ print(CNN_tagged_Sports_Racing.extracted_published_date.min())
 print(CNN_tagged_Sports_Racing.extracted_published_date.max())
 
 
-# In[1037]:
+
 
 
 print(tags_counter(CNN_tagged_Sports_Soccer))
@@ -2348,7 +2340,7 @@ print(CNN_tagged_Sports_Soccer.extracted_published_date.min())
 print(CNN_tagged_Sports_Soccer.extracted_published_date.max())
 
 
-# In[1038]:
+
 
 
 print(tags_counter(CNN_tagged_Sports_Tennis))
@@ -2360,7 +2352,7 @@ print(CNN_tagged_Sports_Tennis.extracted_published_date.max())
 
 # ## Loading Japan Times dataset with extracted candidate tags
 
-# In[1100]:
+
 
 
 import pandas as pd
@@ -2370,7 +2362,7 @@ jt
 
 # ### Import/Install Required Libraries and Packages
 
-# In[44]:
+
 
 
 import re
@@ -2407,7 +2399,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 
 # ### EDA - Wordcloud from titles for possible descriptor tags
 
-# In[399]:
+
 
 
 #Creating the text variable
@@ -2429,7 +2421,7 @@ plt.show()
 
 # ### Text Preprocessing,Cleaning and Tokenization
 
-# In[400]:
+
 
 
 # Convert to list
@@ -2446,7 +2438,7 @@ data4 = [re.sub("\'", "", sent) for sent in data4]
 pprint(data4[0:1])
 
 
-# In[401]:
+
 
 
 #Function for tokenizing
@@ -2461,7 +2453,7 @@ print(data_words[0:1])
 
 # ### Prepare NLTK Stop words
 
-# In[402]:
+
 
 
 from nltk.corpus import stopwords
@@ -2472,7 +2464,7 @@ stop_words.extend(list(STOP_WORDS))
 stop_words.extend(['said','say'])
 
 
-# In[403]:
+
 
 
 print(stop_words)
@@ -2480,7 +2472,7 @@ print(stop_words)
 
 # ### Visualizing Unigrams in text before and after removing stopwords
 
-# In[50]:
+
 
 
 import cufflinks as cf
@@ -2488,7 +2480,7 @@ cf.go_offline()
 cf.set_config_file(offline=False, world_readable=True)
 
 
-# In[404]:
+
 
 
 #The distribution of top unigrams before removing stop words
@@ -2508,7 +2500,7 @@ df2.groupby('extracted_clean_text').sum()['count'].sort_values(ascending=False).
     kind='bar', yTitle='Count', linecolor='black', title='Top 20 unigrams in text before removing stop words')
 
 
-# In[405]:
+
 
 
 #The distribution of top unigrams after removing stop words
@@ -2530,7 +2522,7 @@ df3.groupby('extracted_clean_text').sum()['count'].sort_values(ascending=False).
 
 # ### Identifying bigrams/trigrams
 
-# In[407]:
+
 
 
 # Build the bigram and trigram models
@@ -2545,7 +2537,7 @@ trigram_mod = gensim.models.phrases.Phraser(trigram)
 print(trigram_mod[bigram_mod[data_words[0]]])
 
 
-# In[408]:
+
 
 
 # Define functions for stopwords, bigrams, trigrams and lemmatization
@@ -2567,7 +2559,7 @@ def lemmatization(texts, allowed_postags=['NOUN', 'ADJ', 'VERB', 'ADV']):
     return texts_out
 
 
-# In[410]:
+
 
 
 # Remove Stop Words
@@ -2588,7 +2580,6 @@ print(data_lemmatized4[0:1])
 
 # ### Visualizing Bigrams in text before and after removing stopwords
 
-# In[411]:
 
 
 #The distribution of top bigrams before removing stop words
@@ -2608,7 +2599,7 @@ df4.groupby('extracted_clean_text').sum()['count'].sort_values(ascending=False).
     kind='bar', yTitle='Count', linecolor='black', title='Top 20 bigrams in review before removing stop words')
 
 
-# In[412]:
+
 
 
 #The distribution of top bigrams after removing stop words
@@ -2630,7 +2621,7 @@ df5.groupby('extracted_clean_text').sum()['count'].sort_values(ascending=False).
 
 # ### Visualizing Trigrams in text before and after removing stopwords
 
-# In[413]:
+
 
 
 #The distribution of Top trigrams before removing stop words
@@ -2650,7 +2641,7 @@ df6.groupby('extracted_clean_text').sum()['count'].sort_values(ascending=False).
     kind='bar', yTitle='Count', linecolor='black', title='Top 20 trigrams in review before removing stop words')
 
 
-# In[414]:
+
 
 
 #The distribution of Top trigrams after removing stop words
@@ -2672,7 +2663,7 @@ df7.groupby('extracted_clean_text').sum()['count'].sort_values(ascending=False).
 
 # ### Load Dictionary and create corpus for CNN text
 
-# In[1039]:
+
 
 
 from gensim.test.utils import datapath
@@ -2680,7 +2671,7 @@ temp_file = datapath("model_1.id2word")
 dictionary = corpora.Dictionary.load(temp_file)
 
 
-# In[1040]:
+
 
 
 corpus4 = [dictionary.doc2bow(text) for text in data_lemmatized4]
@@ -2688,7 +2679,7 @@ corpus4 = [dictionary.doc2bow(text) for text in data_lemmatized4]
 
 # ### Load the Pre-Trained LDA Topic Model
 
-# In[1041]:
+
 
 
 # Build LDA model
@@ -2699,7 +2690,7 @@ lda_model = gensim.models.ldamodel.LdaModel.load(temp_file)
 
 # ### Update Model's corpus
 
-# In[1042]:
+
 
 
 lda_model.update(corpus4)
@@ -2707,7 +2698,7 @@ lda_model.update(corpus4)
 
 # ### Model Tuning using LDA Mallet
 
-# In[1043]:
+
 
 
 import os
@@ -2720,7 +2711,6 @@ mallet_path = 'C:/Users/Madesh/mallet-2.0.8/mallet-2.0.8/bin/mallet.bat'
 ldamallet = gensim.models.wrappers.LdaMallet(mallet_path, corpus=corpus4, num_topics=index*2+2, id2word=dictionary)
 
 
-# In[1044]:
 
 
 # Show Topics
@@ -2734,7 +2724,7 @@ print('\nCoherence Score: ', coherence_ldamallet)
 
 # ### Find Optimal number of topics to feed the model to identify
 
-# In[1068]:
+
 
 
 def compute_coherence_values(dictionary, corpus, texts, limit, start=2, step=2):
@@ -2764,13 +2754,13 @@ def compute_coherence_values(dictionary, corpus, texts, limit, start=2, step=2):
     return model_list, coherence_values
 
 
-# In[1069]:
+
 
 
 model_list, coherence_values = compute_coherence_values(dictionary=dictionary, corpus=corpus4, texts=data_lemmatized4, start=2, limit=14, step=2)
 
 
-# In[1070]:
+
 
 
 # Show graph
@@ -2783,7 +2773,7 @@ plt.legend(("coherence_values"), loc='best')
 plt.show()
 
 
-# In[1071]:
+
 
 
 # Print the coherence scores
@@ -2791,7 +2781,6 @@ for m, cv in zip(x, coherence_values):
     print("Num Topics =", m, " has Coherence Value of", round(cv, 4))
 
 
-# In[1072]:
 
 
 cv_values = []
@@ -2805,7 +2794,7 @@ index
 
 # #### selecting the most optimal and efficient number of topics <10 to make sure the articles are not overclassified
 
-# In[1073]:
+
 
 
 # Select the model and print the topics
@@ -2816,7 +2805,6 @@ pprint(optimal_model.print_topics(num_words=10))
 
 # ### Convert Mallet model to LDA model to visualize the topics
 
-# In[1074]:
 
 
 def convertldaGenToldaMallet(mallet_model):
@@ -2831,7 +2819,7 @@ def convertldaGenToldaMallet(mallet_model):
 optimal_model = convertldaGenToldaMallet(optimal_model)
 
 
-# In[1075]:
+
 
 
 #Visualizing Opitmal Model
@@ -2843,7 +2831,7 @@ vis
 
 # ### Dominant topic in each sentence
 
-# In[1076]:
+
 
 
 def format_topics_sentences(ldamodel=optimal_model, corpus=corpus4, texts=data):
@@ -2881,7 +2869,7 @@ df_dominant_topic_jt.head(10)
 
 # ### Most representative document for each topic
 
-# In[1077]:
+
 
 
 # Group top article under each topic
@@ -2904,7 +2892,7 @@ sent_topics_sorteddf_mallet.columns = ['Topic_Num', "Topic_Perc_Contrib", "Keywo
 sent_topics_sorteddf_mallet
 
 
-# In[1085]:
+
 
 
 df_dominant_topic_jt[(df_dominant_topic_jt.Dominant_Topic == 0) & (df_dominant_topic_jt.Topic_Perc_Contrib > 0.60)]
@@ -2912,7 +2900,7 @@ df_dominant_topic_jt[(df_dominant_topic_jt.Dominant_Topic == 0) & (df_dominant_t
 
 # ### Visualizing Word Count and Importance of Topic Keywords
 
-# In[1135]:
+
 
 
 import matplotlib.colors as mcolors
@@ -2948,13 +2936,12 @@ plt.show()
 
 # ### Topic Labelling
 
-# In[1086]:
 
 
 topic_labels = ["Government","Business"]   
 
 
-# In[1087]:
+
 
 
 from matplotlib import pyplot as plt
@@ -2994,7 +2981,6 @@ plt.show()
 
 # ### Save LDA model
 
-# In[1089]:
 
 
 from gensim.test.utils import datapath
@@ -3004,37 +2990,36 @@ optimal_model.save(temp_file)
 
 # ### Grouping Dataset as collections based on identified Topics
 
-# In[1090]:
+
 
 
 df_dominant_topic_jt
 
 
-# In[1091]:
 
 
 df_dominant_topic_jt['Dominant_Topic'] = df_dominant_topic_jt['Dominant_Topic'].replace([0,1], topic_labels)
 
 
-# In[1092]:
+
 
 
 topic_extracted = df_dominant_topic_jt[['Dominant_Topic', 'Keywords']]
 
 
-# In[1101]:
+
 
 
 tags_organizer(jt)
 
 
-# In[1102]:
+
 
 
 jt_tagged = pd.concat([jt, topic_extracted], axis=1)
 
 
-# In[1104]:
+
 
 
 JapanTimes_Collections=[]
@@ -3044,13 +3029,14 @@ for i, x in jt_tagged.groupby('Dominant_Topic'):
 JapanTimes_Collections
 
 
-# In[1105]:
+
 
 
 JT_tagged_Business
 
 
-# In[1106]:
+
+
 
 
 print(tags_counter(JT_tagged_Business))
@@ -3058,7 +3044,7 @@ print(JT_tagged_Business.extracted_published_date.min())
 print(JT_tagged_Business.extracted_published_date.max())
 
 
-# In[1107]:
+
 
 
 print(tags_counter(JT_tagged_Government))
@@ -3070,7 +3056,7 @@ print(JT_tagged_Government.extracted_published_date.max())
 
 # ## Loading CNBC dataset with extracted candidate tags
 
-# In[480]:
+
 
 
 import pandas as pd
@@ -3080,7 +3066,7 @@ cnbc
 
 # ### Import/Install Required Libraries and Packages
 
-# In[481]:
+
 
 
 import re
@@ -3117,7 +3103,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 
 # ### EDA - Wordcloud from titles for possible descriptor tags
 
-# In[482]:
+
 
 
 #Creating the text variable
@@ -3139,7 +3125,7 @@ plt.show()
 
 # ### Text Preprocessing,Cleaning and Tokenization
 
-# In[484]:
+
 
 
 # Convert to list
@@ -3156,7 +3142,7 @@ data5 = [re.sub("\'", "", sent) for sent in data5]
 pprint(data5[0:1])
 
 
-# In[485]:
+
 
 
 #Function for tokenizing
@@ -3171,7 +3157,7 @@ print(data_words[0:1])
 
 # ### Prepare NLTK Stop words
 
-# In[486]:
+
 
 
 from nltk.corpus import stopwords
@@ -3182,7 +3168,7 @@ stop_words.extend(list(STOP_WORDS))
 stop_words.extend(['said','say'])
 
 
-# In[487]:
+
 
 
 print(stop_words)
@@ -3190,7 +3176,7 @@ print(stop_words)
 
 # ### Visualizing Unigrams in text before and after removing stopwords
 
-# In[488]:
+
 
 
 import cufflinks as cf
@@ -3198,7 +3184,7 @@ cf.go_offline()
 cf.set_config_file(offline=False, world_readable=True)
 
 
-# In[489]:
+
 
 
 #The distribution of top unigrams before removing stop words
@@ -3218,7 +3204,7 @@ df2.groupby('extracted_clean_text').sum()['count'].sort_values(ascending=False).
     kind='bar', yTitle='Count', linecolor='black', title='Top 20 unigrams in text before removing stop words')
 
 
-# In[490]:
+
 
 
 #The distribution of top unigrams after removing stop words
@@ -3240,7 +3226,7 @@ df3.groupby('extracted_clean_text').sum()['count'].sort_values(ascending=False).
 
 # ### Identifying bigrams/trigrams & Lemmatization
 
-# In[491]:
+
 
 
 # Build the bigram and trigram models
@@ -3255,7 +3241,7 @@ trigram_mod = gensim.models.phrases.Phraser(trigram)
 print(trigram_mod[bigram_mod[data_words[0]]])
 
 
-# In[492]:
+
 
 
 # Define functions for stopwords, bigrams, trigrams and lemmatization
@@ -3277,7 +3263,7 @@ def lemmatization(texts, allowed_postags=['NOUN', 'ADJ', 'VERB', 'ADV']):
     return texts_out
 
 
-# In[503]:
+
 
 
 # Remove Stop Words
@@ -3298,7 +3284,7 @@ print(data_lemmatized5[0:1])
 
 # ### Visualizing Bigrams in text before and after removing stopwords
 
-# In[494]:
+
 
 
 #The distribution of top bigrams before removing stop words
@@ -3318,7 +3304,7 @@ df4.groupby('extracted_clean_text').sum()['count'].sort_values(ascending=False).
     kind='bar', yTitle='Count', linecolor='black', title='Top 20 bigrams in review before removing stop words')
 
 
-# In[495]:
+
 
 
 #The distribution of top bigrams after removing stop words
@@ -3340,7 +3326,7 @@ df5.groupby('extracted_clean_text').sum()['count'].sort_values(ascending=False).
 
 # ### Visualizing Trigrams in text before and after removing stopwords
 
-# In[496]:
+
 
 
 #The distribution of Top trigrams before removing stop words
@@ -3360,7 +3346,7 @@ df6.groupby('extracted_clean_text').sum()['count'].sort_values(ascending=False).
     kind='bar', yTitle='Count', linecolor='black', title='Top 20 trigrams in review before removing stop words')
 
 
-# In[497]:
+
 
 
 #The distribution of Top trigrams after removing stop words
@@ -3382,7 +3368,7 @@ df7.groupby('extracted_clean_text').sum()['count'].sort_values(ascending=False).
 
 # ### Load Dictionary and create corpus for CNBC text
 
-# In[498]:
+
 
 
 from gensim.test.utils import datapath
@@ -3390,7 +3376,7 @@ temp_file = datapath("model_1.id2word")
 dictionary = corpora.Dictionary.load(temp_file)
 
 
-# In[506]:
+
 
 
 corpus5 = [dictionary.doc2bow(text) for text in data_lemmatized5]
@@ -3398,7 +3384,7 @@ corpus5 = [dictionary.doc2bow(text) for text in data_lemmatized5]
 
 # ### Load the Pre-Trained LDA Topic Model
 
-# In[500]:
+
 
 
 # Build LDA model
@@ -3409,13 +3395,10 @@ lda_model = gensim.models.ldamodel.LdaModel.load(temp_file)
 
 # ### Update Model's corpus
 
-# In[501]:
+
 
 
 lda_model.update(corpus5)
-
-
-# In[418]:
 
 
 
@@ -3423,7 +3406,7 @@ lda_model.update(corpus5)
 
 # ### Model Tuning using LDA Mallet
 
-# In[1108]:
+
 
 
 import os
@@ -3436,7 +3419,7 @@ mallet_path = 'C:/Users/Madesh/mallet-2.0.8/mallet-2.0.8/bin/mallet.bat'
 ldamallet = gensim.models.wrappers.LdaMallet(mallet_path, corpus=corpus5, num_topics=index*2+2, id2word=dictionary)
 
 
-# In[1109]:
+
 
 
 # Show Topics
@@ -3450,7 +3433,6 @@ print('\nCoherence Score: ', coherence_ldamallet)
 
 # ### Find Optimal number of topics to feed the model to identify
 
-# In[1110]:
 
 
 def compute_coherence_values(dictionary, corpus, texts, limit, start=2, step=2):
@@ -3486,7 +3468,7 @@ def compute_coherence_values(dictionary, corpus, texts, limit, start=2, step=2):
 model_list, coherence_values = compute_coherence_values(dictionary=dictionary, corpus=corpus5, texts=data_lemmatized5, start=2, limit=14, step=2)
 
 
-# In[1112]:
+
 
 
 # Show graph
@@ -3499,7 +3481,7 @@ plt.legend(("coherence_values"), loc='best')
 plt.show()
 
 
-# In[1113]:
+
 
 
 # Print the coherence scores
@@ -3507,7 +3489,7 @@ for m, cv in zip(x, coherence_values):
     print("Num Topics =", m, " has Coherence Value of", round(cv, 4))
 
 
-# In[1114]:
+
 
 
 cv_values = []
@@ -3521,7 +3503,7 @@ index
 
 # #### selecting the most optimal and efficient number of topics <10 to make sure the articles are not overclassified
 
-# In[1115]:
+
 
 
 # Select the model and print the topics
@@ -3532,7 +3514,7 @@ pprint(optimal_model.print_topics(num_words=10))
 
 # ### Convert Mallet model to LDA model to visualize the topics
 
-# In[1116]:
+
 
 
 def convertldaGenToldaMallet(mallet_model):
@@ -3547,7 +3529,7 @@ def convertldaGenToldaMallet(mallet_model):
 optimal_model = convertldaGenToldaMallet(optimal_model)
 
 
-# In[1117]:
+
 
 
 #Visualizing Opitmal Model
@@ -3559,7 +3541,7 @@ vis
 
 # ### Dominant topic in each sentence
 
-# In[1118]:
+
 
 
 def format_topics_sentences(ldamodel=optimal_model, corpus=corpus5, texts=data):
@@ -3597,7 +3579,7 @@ df_dominant_topic_cnbc.head(10)
 
 # ### Most representative document for each topic
 
-# In[1119]:
+
 
 
 # Group top article under each topic
@@ -3620,7 +3602,7 @@ sent_topics_sorteddf_mallet.columns = ['Topic_Num', "Topic_Perc_Contrib", "Keywo
 sent_topics_sorteddf_mallet
 
 
-# In[1132]:
+
 
 
 df_dominant_topic_cnbc[(df_dominant_topic_cnbc.Dominant_Topic == 7) & (df_dominant_topic_cnbc.Topic_Perc_Contrib > 0.30)]
@@ -3628,7 +3610,7 @@ df_dominant_topic_cnbc[(df_dominant_topic_cnbc.Dominant_Topic == 7) & (df_domina
 
 # ### Visualizing Word Count and Importance of Topic Keywords
 
-# In[1122]:
+
 
 
 import matplotlib.colors as mcolors
@@ -3664,13 +3646,12 @@ plt.show()
 
 # ### Topic Labelling for CNBC dataset
 
-# In[1133]:
+
 
 
 topic_labels = ["Market_Trade","Market_Business","Market_Jobs","Market_Stocks_Shares","World","Government","Market_Investments","Sports_Entertainment","Market_Economy","Politics"]   
 
 
-# In[1134]:
 
 
 from matplotlib import pyplot as plt
@@ -3708,7 +3689,7 @@ plt.tight_layout()
 plt.show()
 
 
-# In[1136]:
+
 
 
 #save LDA model
@@ -3719,37 +3700,37 @@ optimal_model.save(temp_file)
 
 # ### Grouping Dataset as collections based on identified Topics
 
-# In[1138]:
+
 
 
 df_dominant_topic_cnbc
 
 
-# In[1139]:
+
 
 
 df_dominant_topic_cnbc['Dominant_Topic'] = df_dominant_topic_cnbc['Dominant_Topic'].replace([0,1,2,3,4,5,6,7,8,9], topic_labels)
 
 
-# In[1140]:
+
 
 
 topic_extracted = df_dominant_topic_cnbc[['Dominant_Topic', 'Keywords']]
 
 
-# In[1141]:
+
 
 
 tags_organizer(cnbc)
 
 
-# In[1142]:
+
 
 
 CNBC_tagged = pd.concat([cnbc, topic_extracted], axis=1)
 
 
-# In[1144]:
+
 
 
 CNBC_Collections=[]
@@ -3759,13 +3740,13 @@ for i, x in CNBC_tagged.groupby('Dominant_Topic'):
 CNBC_Collections
 
 
-# In[1145]:
+
 
 
 CNBC_tagged_Market_Business
 
 
-# In[1146]:
+
 
 
 print(tags_counter(CNBC_tagged_Government))
@@ -3773,7 +3754,6 @@ print(CNBC_tagged_Government.extracted_published_date.min())
 print(CNBC_tagged_Government.extracted_published_date.max())
 
 
-# In[1147]:
 
 
 print(tags_counter(CNBC_tagged_Market_Business))
@@ -3781,7 +3761,7 @@ print(CNBC_tagged_Market_Business.extracted_published_date.min())
 print(CNBC_tagged_Market_Business.extracted_published_date.max())
 
 
-# In[1148]:
+
 
 
 print(tags_counter(CNBC_tagged_Market_Economy))
@@ -3789,7 +3769,7 @@ print(CNBC_tagged_Market_Economy.extracted_published_date.min())
 print(CNBC_tagged_Market_Economy.extracted_published_date.max())
 
 
-# In[1149]:
+
 
 
 print(tags_counter(CNBC_tagged_Market_Investments))
@@ -3797,7 +3777,6 @@ print(CNBC_tagged_Market_Investments.extracted_published_date.min())
 print(CNBC_tagged_Market_Investments.extracted_published_date.max())
 
 
-# In[1150]:
 
 
 print(tags_counter(CNBC_tagged_Market_Jobs))
@@ -3805,7 +3784,7 @@ print(CNBC_tagged_Market_Jobs.extracted_published_date.min())
 print(CNBC_tagged_Market_Jobs.extracted_published_date.max())
 
 
-# In[1151]:
+
 
 
 print(tags_counter(CNBC_tagged_Market_Stocks_Shares))
@@ -3813,7 +3792,7 @@ print(CNBC_tagged_Market_Stocks_Shares.extracted_published_date.min())
 print(CNBC_tagged_Market_Stocks_Shares.extracted_published_date.max())
 
 
-# In[1152]:
+
 
 
 print(tags_counter(CNBC_tagged_Market_Trade))
@@ -3821,7 +3800,7 @@ print(CNBC_tagged_Market_Trade.extracted_published_date.min())
 print(CNBC_tagged_Market_Trade.extracted_published_date.max())
 
 
-# In[1153]:
+
 
 
 print(tags_counter(CNBC_tagged_Politics))
@@ -3829,7 +3808,7 @@ print(CNBC_tagged_Politics.extracted_published_date.min())
 print(CNBC_tagged_Politics.extracted_published_date.max())
 
 
-# In[1154]:
+
 
 
 print(tags_counter(CNBC_tagged_Sports_Entertainment))
@@ -3837,7 +3816,7 @@ print(CNBC_tagged_Sports_Entertainment.extracted_published_date.min())
 print(CNBC_tagged_Sports_Entertainment.extracted_published_date.max())
 
 
-# In[1155]:
+
 
 
 print(tags_counter(CNBC_tagged_World))
@@ -3845,7 +3824,6 @@ print(CNBC_tagged_World.extracted_published_date.min())
 print(CNBC_tagged_World.extracted_published_date.max())
 
 
-# In[ ]:
 
 
 

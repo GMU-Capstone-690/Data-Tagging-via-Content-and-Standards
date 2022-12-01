@@ -1,4 +1,4 @@
-The data in 'extracted_clean_text' is the main column used for analysis & modeling.
+The data in 'extracted_clean_text' column is used for analysis & modeling.
 Following pre-processing steps are done to prepare data for LDA model:
 - Conversion of text to list
 - Remove emails, new line characters, unwanted quotes & stopwords

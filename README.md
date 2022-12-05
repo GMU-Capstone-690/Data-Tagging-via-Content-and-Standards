@@ -7,7 +7,7 @@ Clean data is extracted from html content of URL's [hello](Data Extraction/Data_
 ## Objectives
 
 ## Datasets
-[Datsets proposed for this project are mentioned here.](/Datasets Overview/README.md)
+[Datsets proposed for this project are mentioned here.](https://github.com/GMU-Capstone-690/Data-Tagging-via-Content-and-Standards/blob/main/Data%20Extraction/Data_Extracting.py)
 
 ## Installation
 

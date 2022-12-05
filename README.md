@@ -12,7 +12,8 @@ Manual text data tagging is time consuming and is neither effective nor efficien
 
 ## Usage
 - Download all five datasets (BBC, CNBC, CNN, Aljazeera, Japan times) from [Data Collection](https://github.com/GMU-Capstone-690/Data-Tagging-via-Content-and-Standards/tree/main/Data%20Collection) folder.
-- All datasets are kept separate for processing. Run [cleaning.py]() file for pre-processing data which will be removing  
+- All datasets are kept separate for processing. Run [cleaning.py](https://github.com/GMU-Capstone-690/Data-Tagging-via-Content-and-Standards/blob/main/Data%20Cleaning/Data_Cleaning_of_all_datasets.py) file for pre-processing data which will remove spaces, N/A, blank and null values. Also, if expired or invalid URL found, these records are dropped and result is saved to fresh csv file.  
+- 
 
 ## Installation
 Mallet implementation by gensim is required for finding best number of topics. You need to [download](http://mallet.cs.umass.edu/dist/mallet-2.0.8.zip) the zipfile, unzip it and provide the path to mallet in the unzipped directory to gensim.models.wrappers.LdaMallet.

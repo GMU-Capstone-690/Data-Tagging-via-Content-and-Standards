@@ -7,7 +7,7 @@ Data tagging is used for classification, arrangement and organization of data by
 - [Data_Collection](https://github.com/GMU-Capstone-690/Data-Tagging-via-Content-and-Standards/tree/main/Datasets%20Overview) Data is collected from data.world website.
 - [Data_Cleaning](https://github.com/GMU-Capstone-690/Data-Tagging-via-Content-and-Standards/tree/main/Data%20Cleaning) Data is cleaned by removing nulls, duplicates and expired links.
 - [Data_Extraction](https://github.com/GMU-Capstone-690/Data-Tagging-via-Content-and-Standards/tree/main/Data%20Extraction) Clean text and admin tags are extracted from html content. 
-- [Data_Modeling] (https://github.com/GMU-Capstone-690/Data-Tagging-via-Content-and-Standards/tree/main/Data%20Modeling) Training and tuning of LDA model is done. 
+- [Data_Modeling](https://github.com/GMU-Capstone-690/Data-Tagging-via-Content-and-Standards/tree/main/Data%20Modeling) Training and tuning of LDA model is done. 
 
 ## Installation
 

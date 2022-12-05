@@ -1,5 +1,4 @@
-#!/usr/bin/env python
-# coding: utf-8
+
 
 # # Text and Keywords Extraction from HTML Pages
 

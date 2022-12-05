@@ -6,6 +6,6 @@ Following pre-processing steps are done to prepare data for LDA model:
 - Creating unigram, bigram & trigrams
 - Lemmatization while keeping only nouns, adjectives, verbs & adverbs
 
-Then master dictionary and corpus are generated which are input of LDA model. Model evaluation matrix like perplexity and coherence along with optimal number of topics are calculated in Modeling.py. 
+Then master dictionary and corpus are generated which are input of LDA model. Model evaluation matrix like perplexity and coherence along with optimal number of topics are calculated in this [script](https://github.com/GMU-Capstone-690/Data-Tagging-via-Content-and-Standards/blob/main/Data%20Modeling/Modeling.py). 
 
 

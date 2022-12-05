@@ -2,7 +2,7 @@
 Data tagging is used for classification, arrangement and organization of data by assigning admin and descriptor tags. These metadata tags makes discovery easy in data catalogs. The goal of project is to extract clear, segregated and meaningful tags from text that allow the organization to automate the process of organizing their data inventory while maintaining DCAT standards. 
 
 ## Problem Statement & Solution Space
-Manual text data tagging is time consuming and is neither effective nor efficient which makes data discovery and standardization an arduous process. The solution is to create an ML/AI model that can identify, categorize, and tag data based on content, while focusing on standardization of the generated tags. So, topic modeling algorithm LDA is used to find topics, thus automating metadata tagging. 
+Manual text data tagging is time consuming and is neither effective nor efficient which makes data discovery and standardization an arduous process. The solution is to create an ML/AI model that can identify, categorize, and tag data based on content, while focusing on standardization of the generated tags. So, topic modeling algorithm LDA is used to find topics, thus automating metadata tagging process. 
 
 ## Project Pipeline
 - [Data Collection](https://github.com/GMU-Capstone-690/Data-Tagging-via-Content-and-Standards/tree/main/Datasets%20Overview) Data is collected from data.world website.

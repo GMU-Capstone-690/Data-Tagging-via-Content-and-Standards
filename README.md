@@ -1,7 +1,8 @@
 # Data Tagging via Content & Standards
-Data tagging is used for classification, identification, arrangement and organization of content of data. This tagging can be in the form of words, images or some identifying marks which makes it easy to find all data points and characteristics that are related to each other. Data tagging is in the format of key-value pairs and can be done manually or automatically. It helps to answer ad-hoc queries easily and efficiently. Our project will be mainly focused on text tagging based on content and standards.
+Data tagging is used for classification, arrangement and organization of data by assigning descriptor tags. The goal of project is to extract clear, segregated and meaningful tags from text that allow the organization to automate the process of organizing their data inventory. 
 
-## Problem & Solution Space
+## Project Pipeline
+Clean data is extracted from html content of URL's which is further used to extract admin tags like date, person and organization. 
 
 ## Objectives
 

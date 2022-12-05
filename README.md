@@ -2,7 +2,7 @@
 Data tagging is used for classification, arrangement and organization of data by assigning descriptor tags. The goal of project is to extract clear, segregated and meaningful tags from text that allow the organization to automate the process of organizing their data inventory. 
 
 ## Project Pipeline
-Clean data is extracted from html content of URL's which is further used to extract admin tags like date, person and organization. 
+Clean data is extracted from html content of URL's [hello](Data Extraction/README.md) which is further used to extract admin tags like date, person and organization. 
 
 ## Objectives
 

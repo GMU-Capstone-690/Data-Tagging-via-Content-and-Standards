@@ -12,7 +12,7 @@ Data tagging is used for classification, arrangement and organization of data by
 ## Installation
 Mallet implementation by gensim is required for finding best number of topics. You need to [download](http://mallet.cs.umass.edu/dist/mallet-2.0.8.zip) the zipfile, unzip it and provide the path to mallet in the unzipped directory to gensim.models.wrappers.LdaMallet.
 
-mallet_path = 'path/to/mallet-2.0.8/bin/mallet' [//]: #(update this path in [modeling](https://github.com/GMU-Capstone-690/Data-Tagging-via-Content-and-Standards/blob/main/Data%20Modeling/Modeling.py) file.)
+mallet_path = 'path/to/mallet-2.0.8/bin/mallet' [//]: # (update this path in [modeling](https://github.com/GMU-Capstone-690/Data-Tagging-via-Content-and-Standards/blob/main/Data%20Modeling/Modeling.py) file.)
 
 ## Usage
 

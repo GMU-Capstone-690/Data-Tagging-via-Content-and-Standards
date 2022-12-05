@@ -2,8 +2,9 @@
 Data tagging is used for classification, arrangement and organization of data by assigning descriptor tags. The goal of project is to extract clear, segregated and meaningful tags from text that allow the organization to automate the process of organizing their data inventory. 
 
 ## Project Pipeline
-- [Data_Collection](https://github.com/GMU-Capstone-690/Data-Tagging-via-Content-and-Standards/tree/main/Datasets%20Overview)Data is collected from data.world website.
-Clean data is extracted from html content of URL's [hello](https://github.com/GMU-Capstone-690/Data-Tagging-via-Content-and-Standards/blob/main/Data%20Extraction/Data_Extracting.py) which is further used to extract admin tags like date, person and organization. 
+- [Data_Collection](https://github.com/GMU-Capstone-690/Data-Tagging-via-Content-and-Standards/tree/main/Datasets%20Overview) Data is collected from data.world website.
+- Data is cleaned by removing nulls, duplicates and expired links.
+-Clean data is extracted from html content of URL's [hello](https://github.com/GMU-Capstone-690/Data-Tagging-via-Content-and-Standards/blob/main/Data%20Extraction/Data_Extracting.py) which is further used to extract admin tags like date, person and organization. 
 
 ## Objectives
 

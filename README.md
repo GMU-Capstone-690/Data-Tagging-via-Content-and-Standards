@@ -11,7 +11,7 @@ Manual text data tagging is time consuming and is neither effective nor efficien
 - [Data Modeling](https://github.com/GMU-Capstone-690/Data-Tagging-via-Content-and-Standards/tree/main/Data%20Modeling) Training and tuning of LDA model is done. 
 
 ## Usage
-- Download five datasets (BBC, CNBC, CNN, Aljazeera, Japan times) from this [folder](https://github.com/GMU-Capstone-690/Data-Tagging-via-Content-and-Standards/tree/main/Data%20Collection)
+- Download all five datasets (BBC, CNBC, CNN, Aljazeera, Japan times) from [Data Collection](https://github.com/GMU-Capstone-690/Data-Tagging-via-Content-and-Standards/tree/main/Data%20Collection) folder.
 - All datasets are kept separate for processing. Run [cleaning.py]() file for pre-processing data which will be removing  
 
 ## Installation

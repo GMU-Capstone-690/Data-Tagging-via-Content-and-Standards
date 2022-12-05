@@ -4,10 +4,10 @@ Data tagging is used for classification, arrangement and organization of data by
 ## Problem Statement & Solution Space
 
 ## Project Pipeline
-- [Data_Collection](https://github.com/GMU-Capstone-690/Data-Tagging-via-Content-and-Standards/tree/main/Datasets%20Overview) Data is collected from data.world website.
-- [Data_Cleaning](https://github.com/GMU-Capstone-690/Data-Tagging-via-Content-and-Standards/tree/main/Data%20Cleaning) Data is cleaned by removing nulls, duplicates and expired links.
-- [Data_Extraction](https://github.com/GMU-Capstone-690/Data-Tagging-via-Content-and-Standards/tree/main/Data%20Extraction) Clean text and admin tags are extracted from html content. 
-- [Data_Modeling](https://github.com/GMU-Capstone-690/Data-Tagging-via-Content-and-Standards/tree/main/Data%20Modeling) Training and tuning of LDA model is done. 
+- [Data Collection](https://github.com/GMU-Capstone-690/Data-Tagging-via-Content-and-Standards/tree/main/Datasets%20Overview) Data is collected from data.world website.
+- [Data Cleaning](https://github.com/GMU-Capstone-690/Data-Tagging-via-Content-and-Standards/tree/main/Data%20Cleaning) Data is cleaned by removing nulls, duplicates and expired links.
+- [Data Extraction](https://github.com/GMU-Capstone-690/Data-Tagging-via-Content-and-Standards/tree/main/Data%20Extraction) Clean text and admin tags are extracted from html content. 
+- [Data Modeling](https://github.com/GMU-Capstone-690/Data-Tagging-via-Content-and-Standards/tree/main/Data%20Modeling) Training and tuning of LDA model is done. 
 
 ## Installation
 Mallet implementation by gensim is required for finding best number of topics. You need to [download](http://mallet.cs.umass.edu/dist/mallet-2.0.8.zip) the zipfile, unzip it and provide the path to mallet in the unzipped directory to gensim.models.wrappers.LdaMallet.

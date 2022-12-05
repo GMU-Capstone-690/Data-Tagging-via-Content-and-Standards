@@ -1062,7 +1062,7 @@ os.environ['MALLET_HOME'] = 'C:/Users/Madesh/mallet-2.0.8/mallet-2.0.8'
 
 from gensim.models.wrappers import LdaMallet
 
-mallet_path = 'C:/Users/Madesh/mallet-2.0.8/mallet-2.0.8/bin/mallet.bat'
+mallet_path = '.../mallet-2.0.8/mallet-2.0.8/bin/mallet.bat'
 ldamallet = gensim.models.wrappers.LdaMallet(mallet_path, corpus=corpus1, num_topics=8, id2word=id2word1)
 
 

@@ -16,7 +16,7 @@ Mallet implementation by gensim is required for finding best number of topics. Y
 ```
 mallet_path = 'path/to/mallet-2.0.8/bin/mallet'
 ```
-*(update mallet_path in [modeling](https://github.com/GMU-Capstone-690/Data-Tagging-via-Content-and-Standards/blob/main/Data%20Modeling/Modeling.py) file)* 
+*(update mallet_path in [modeling](https://github.com/GMU-Capstone-690/Data-Tagging-via-Content-and-Standards/blob/main/Data%20Modeling/Modeling.py) file in line 1065)* 
 
 ## Usage
 

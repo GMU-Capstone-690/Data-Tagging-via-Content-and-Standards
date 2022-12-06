@@ -26,5 +26,5 @@ mallet_path = 'path/to/mallet-2.0.8/bin/mallet'
 
 ## Credits
 George Mason Data Analytics Engineering Program: DAEN 690
-<br /> Fall 2022 Team Code-Bees: Madesh Chinnathevar Ramesh, Shagufta Hassan, Durafshan Jawad, Lama Alznaidi, Prajna Shetty
+<br /> Fall 2022 Team Code-Bees: Shagufta Hassan, Durafshan Jawad, Lama Alznaidi, Prajna Shetty, Madesh Chinnathevar Ramesh.
 

@@ -20,11 +20,14 @@ mallet_path = 'path/to/mallet-2.0.8/bin/mallet'
 ```
 *(update mallet_path in [modeling](https://github.com/GMU-Capstone-690/Data-Tagging-via-Content-and-Standards/blob/main/Data%20Modeling/Modeling.py) file in line 1065)* 
 
-## Usage
+## Model Implementation
 - Download all five datasets (BBC, CNBC, CNN, Aljazeera, Japan times) from [Data Collection](https://github.com/GMU-Capstone-690/Data-Tagging-via-Content-and-Standards/tree/main/Data%20Collection) folder.
 - All datasets are kept separate for processing. Run [cleaning.py](https://github.com/GMU-Capstone-690/Data-Tagging-via-Content-and-Standards/blob/main/Data%20Cleaning/Data_Cleaning_of_all_datasets.py) file for pre-processing data which will remove spaces, N/A, blank and null values. Also, if expired or invalid URL found, these records are dropped and result is saved to fresh csv file.  
 - Load clean data from step 2 to [extraction.py](https://github.com/GMU-Capstone-690/Data-Tagging-via-Content-and-Standards/blob/main/Data%20Extraction/Data_Extracting.py) which will extract clean text, title, and published date from html content of URLs. Admin tags like person, organization and places with their counts are also extracted.
 - Load extracted data from step 3 to [modeling.py](https://github.com/GMU-Capstone-690/Data-Tagging-via-Content-and-Standards/blob/main/Data%20Modeling/Modeling.py) which will [pre-process](https://github.com/GMU-Capstone-690/Data-Tagging-via-Content-and-Standards/tree/main/Data%20Modeling) data to create dictionary(id2word) and the corpus which are two main inputs to the LDA topic model. Optimal topics are generated and mapped to tags. 
+
+## Use Case
+For an organization that maintains its dataset inventory based on URLs, this solution will enable them to tag data and upload the collections into their catalog as records. The tags will be useful in building a search engine for the catalog that will allow users to pull datasets based on keywords that match the tags. For example, if a user wants to find a data collection related to sports and racing, he can enter the same in the search box and the collections with tags that match this keyword in the data catalog will be retrieved by the search engine.
 
 ## Credits
 George Mason Data Analytics Engineering Program: DAEN 690

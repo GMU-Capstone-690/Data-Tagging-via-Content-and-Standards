@@ -27,7 +27,7 @@ mallet_path = 'path/to/mallet-2.0.8/bin/mallet'
 - Load extracted data from step 3 to [modeling.py](https://github.com/GMU-Capstone-690/Data-Tagging-via-Content-and-Standards/blob/main/Data%20Modeling/Modeling.py) which will [pre-process](https://github.com/GMU-Capstone-690/Data-Tagging-via-Content-and-Standards/tree/main/Data%20Modeling) data to create dictionary(id2word) and the corpus which are two main inputs to the LDA topic model. Optimal topics are generated and mapped to tags. 
 
 ## Use Case
-For an organization that maintains its dataset inventory based on URLs, this solution will enable them to tag data and upload the collections into their catalog as records. The tags will be useful in building a search engine for the catalog that will allow users to pull datasets based on keywords that match the tags. For example, if a user wants to find a data collection related to sports and racing, he can enter the same in the search box and the collections with tags that match this keyword in the data catalog will be retrieved by the search engine.
+This solution will enable organizations to tag data and upload the collections into their catalog as records. The tags will be useful in building a search engine for the catalog that will allow users to pull datasets based on keywords that match the tags. For example, if a user wants to find a data collection related to sports, he can enter it in the search box and the collections with tags that match this keyword in the data catalog will be retrieved by the search engine.
 
 ## Credits
 George Mason Data Analytics Engineering Program: DAEN 690

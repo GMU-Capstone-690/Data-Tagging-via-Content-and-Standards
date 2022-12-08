@@ -31,5 +31,10 @@ For an organization that maintains its dataset inventory based on URLs, this sol
 
 ## Credits
 George Mason Data Analytics Engineering Program: DAEN 690
-<br /> Fall 2022 Team Code-Bees: Shagufta Hassan, Durafshan Jawad, Lama Alznaidi, Prajna Shetty, Madesh Chinnathevar Ramesh.
+<br /> Fall 2022 Team Code-Bees:
+- Shagufta Hassan (https://www.linkedin.com/in/shagufta-hassan-08/)
+- Durafshan Jawad (https://www.linkedin.com/in/durafshan-jawad-5b07b0133/)
+- Lama Alznaidi (
+- Prajna Shetty (https://www.linkedin.com/in/prajna-shetty-517ab0244/)
+-Madesh Chinnathevar Ramesh (https://www.linkedin.com/in/madeshcr/)
 
